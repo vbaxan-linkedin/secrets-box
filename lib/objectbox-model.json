@@ -1,0 +1,235 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:1439785766373091740",
+      "lastPropertyId": "10:2707296547118688812",
+      "name": "BoxUser",
+      "properties": [
+        {
+          "id": "1:5814409548211187442",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "6:2881649992247817566",
+          "name": "uuId",
+          "type": 9,
+          "flags": 34848,
+          "indexId": "2:3950006460369425872"
+        },
+        {
+          "id": "7:5471732945144939490",
+          "name": "username",
+          "type": 9,
+          "flags": 2080,
+          "indexId": "3:4156896939401104175"
+        },
+        {
+          "id": "9:2274027840110581478",
+          "name": "salt",
+          "type": 9
+        },
+        {
+          "id": "10:2707296547118688812",
+          "name": "passwordHash",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "6:8711875957961349232",
+      "lastPropertyId": "6:6033454902112758232",
+      "name": "BoxPasswordSecret",
+      "properties": [
+        {
+          "id": "1:4351037987709832098",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:2814000483297060227",
+          "name": "entityId",
+          "type": 9,
+          "flags": 34848,
+          "indexId": "7:4629117310956746396"
+        },
+        {
+          "id": "3:4711492884591726590",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "4:6293057660307318842",
+          "name": "password",
+          "type": 9
+        },
+        {
+          "id": "5:2755442305963400299",
+          "name": "secretsEntryId",
+          "type": 9
+        },
+        {
+          "id": "6:6033454902112758232",
+          "name": "userId",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "7:1924211853924683680",
+      "lastPropertyId": "4:6411156345032939162",
+      "name": "BoxSecretsCategory",
+      "properties": [
+        {
+          "id": "1:2326084050025934123",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1530461658101074757",
+          "name": "categoryId",
+          "type": 9,
+          "flags": 34848,
+          "indexId": "8:8026342280243699303"
+        },
+        {
+          "id": "3:7579537261763070907",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "4:6411156345032939162",
+          "name": "userId",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "8:3967998834296108358",
+      "lastPropertyId": "6:3046935334589828619",
+      "name": "BoxSecretsEntry",
+      "properties": [
+        {
+          "id": "1:8330156408600349182",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8702559111745727439",
+          "name": "secretsEntryId",
+          "type": 9,
+          "flags": 34848,
+          "indexId": "9:1860773659152041467"
+        },
+        {
+          "id": "3:3736114449616953300",
+          "name": "userId",
+          "type": 9
+        },
+        {
+          "id": "4:6668832959887969617",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "6:3046935334589828619",
+          "name": "categoryId",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "9:8756569850340011702",
+      "lastPropertyId": "6:6994739299221393064",
+      "name": "BoxSimpleTextSecret",
+      "properties": [
+        {
+          "id": "1:4226390987843584979",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8160816985960886692",
+          "name": "entityId",
+          "type": 9
+        },
+        {
+          "id": "3:5425379627440064622",
+          "name": "name",
+          "type": 9,
+          "flags": 34848,
+          "indexId": "10:8359430909059772469"
+        },
+        {
+          "id": "4:5039119046165175681",
+          "name": "text",
+          "type": 9
+        },
+        {
+          "id": "5:777668611484036789",
+          "name": "userId",
+          "type": 9
+        },
+        {
+          "id": "6:6994739299221393064",
+          "name": "secretsEntryId",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "9:8756569850340011702",
+  "lastIndexId": "10:8359430909059772469",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [
+    2923212417817396818,
+    7399021269790462562,
+    2534067113374659677,
+    5461566537505069556
+  ],
+  "retiredIndexUids": [
+    4102753725350560477
+  ],
+  "retiredPropertyUids": [
+    5948484875982684821,
+    3944251529676479604,
+    3418572925750825685,
+    8137386634090373013,
+    1697329569428169711,
+    1373474220678182030,
+    1676210383692528281,
+    784840885189612474,
+    5540719855793243521,
+    3782482154061880269,
+    3059730045502568295,
+    7525300731354223206,
+    1332021250267211561,
+    368482423228325303,
+    3050821429644254413,
+    5112420395785015964,
+    7450212579369347008,
+    810982279032385613,
+    1871900919373686129,
+    8004044078197418512,
+    6085075747357750578,
+    5715458660984123933
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

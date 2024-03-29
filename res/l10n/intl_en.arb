@@ -1,0 +1,14 @@
+{
+  "_locale": "en",
+  "appName": "Secrets Box",
+  "createProfile": "Create profile",
+  "password": "Password",
+  "repeatPassword": "Repeat password",
+  "username": "Username",
+  "login": "Login",
+  "confirm": "Confirm",
+  "addSecret": "Add Secret",
+  "title": "Title",
+  "secrets": "Secrets",
+  "settings": "Settings"
+}
