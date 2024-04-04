@@ -58,46 +58,6 @@ final _entities = <obx_int.ModelEntity>[
       relations: <obx_int.ModelRelation>[],
       backlinks: <obx_int.ModelBacklink>[]),
   obx_int.ModelEntity(
-      id: const obx_int.IdUid(6, 8711875957961349232),
-      name: 'BoxPasswordSecret',
-      lastPropertyId: const obx_int.IdUid(6, 6033454902112758232),
-      flags: 0,
-      properties: <obx_int.ModelProperty>[
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(1, 4351037987709832098),
-            name: 'id',
-            type: 6,
-            flags: 1),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(2, 2814000483297060227),
-            name: 'entityId',
-            type: 9,
-            flags: 34848,
-            indexId: const obx_int.IdUid(7, 4629117310956746396)),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(3, 4711492884591726590),
-            name: 'name',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(4, 6293057660307318842),
-            name: 'password',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(5, 2755442305963400299),
-            name: 'secretsEntryId',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(6, 6033454902112758232),
-            name: 'userId',
-            type: 9,
-            flags: 0)
-      ],
-      relations: <obx_int.ModelRelation>[],
-      backlinks: <obx_int.ModelBacklink>[]),
-  obx_int.ModelEntity(
       id: const obx_int.IdUid(7, 1924211853924683680),
       name: 'BoxSecretsCategory',
       lastPropertyId: const obx_int.IdUid(4, 6411156345032939162),
@@ -130,7 +90,7 @@ final _entities = <obx_int.ModelEntity>[
   obx_int.ModelEntity(
       id: const obx_int.IdUid(8, 3967998834296108358),
       name: 'BoxSecretsEntry',
-      lastPropertyId: const obx_int.IdUid(6, 3046935334589828619),
+      lastPropertyId: const obx_int.IdUid(8, 2597119138542288584),
       flags: 0,
       properties: <obx_int.ModelProperty>[
         obx_int.ModelProperty(
@@ -155,48 +115,53 @@ final _entities = <obx_int.ModelEntity>[
             type: 9,
             flags: 0),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(6, 3046935334589828619),
-            name: 'categoryId',
-            type: 9,
+            id: const obx_int.IdUid(7, 3955626993031196895),
+            name: 'categoryIds',
+            type: 30,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(8, 2597119138542288584),
+            name: 'secretIds',
+            type: 30,
             flags: 0)
       ],
       relations: <obx_int.ModelRelation>[],
       backlinks: <obx_int.ModelBacklink>[]),
   obx_int.ModelEntity(
-      id: const obx_int.IdUid(9, 8756569850340011702),
-      name: 'BoxSimpleTextSecret',
-      lastPropertyId: const obx_int.IdUid(6, 6994739299221393064),
+      id: const obx_int.IdUid(11, 4856237438968097379),
+      name: 'BoxSecret',
+      lastPropertyId: const obx_int.IdUid(6, 6462966750951263211),
       flags: 0,
       properties: <obx_int.ModelProperty>[
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(1, 4226390987843584979),
+            id: const obx_int.IdUid(1, 2115724313747831551),
             name: 'id',
             type: 6,
             flags: 1),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(2, 8160816985960886692),
-            name: 'entityId',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(3, 5425379627440064622),
-            name: 'name',
+            id: const obx_int.IdUid(2, 607301051601189962),
+            name: 'secretId',
             type: 9,
             flags: 34848,
-            indexId: const obx_int.IdUid(10, 8359430909059772469)),
+            indexId: const obx_int.IdUid(12, 2941665141008696997)),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(4, 5039119046165175681),
-            name: 'text',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(5, 777668611484036789),
+            id: const obx_int.IdUid(3, 8227432600825242365),
             name: 'userId',
             type: 9,
             flags: 0),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(6, 6994739299221393064),
-            name: 'secretsEntryId',
+            id: const obx_int.IdUid(4, 1062366408935811717),
+            name: 'name',
+            type: 9,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(5, 2162981054534404651),
+            name: 'dbSecretType',
+            type: 9,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(6, 6462966750951263211),
+            name: 'dbSecretData',
             type: 9,
             flags: 0)
       ],
@@ -239,15 +204,18 @@ Future<obx.Store> openStore(
 obx_int.ModelDefinition getObjectBoxModel() {
   final model = obx_int.ModelInfo(
       entities: _entities,
-      lastEntityId: const obx_int.IdUid(9, 8756569850340011702),
-      lastIndexId: const obx_int.IdUid(10, 8359430909059772469),
+      lastEntityId: const obx_int.IdUid(11, 4856237438968097379),
+      lastIndexId: const obx_int.IdUid(12, 2941665141008696997),
       lastRelationId: const obx_int.IdUid(0, 0),
       lastSequenceId: const obx_int.IdUid(0, 0),
       retiredEntityUids: const [
         2923212417817396818,
         7399021269790462562,
         2534067113374659677,
-        5461566537505069556
+        5461566537505069556,
+        8756569850340011702,
+        8711875957961349232,
+        7563782811538484709
       ],
       retiredIndexUids: const [4102753725350560477],
       retiredPropertyUids: const [
@@ -272,7 +240,27 @@ obx_int.ModelDefinition getObjectBoxModel() {
         1871900919373686129,
         8004044078197418512,
         6085075747357750578,
-        5715458660984123933
+        5715458660984123933,
+        3046935334589828619,
+        6293057660307318842,
+        4226390987843584979,
+        8160816985960886692,
+        5425379627440064622,
+        5039119046165175681,
+        777668611484036789,
+        6994739299221393064,
+        2755442305963400299,
+        6492190815521305838,
+        4351037987709832098,
+        2814000483297060227,
+        4711492884591726590,
+        6033454902112758232,
+        6755897924701200064,
+        1551662866995906537,
+        1661167845117644796,
+        764821668104937004,
+        8769088842305190708,
+        5774823853021560602
       ],
       retiredRelationUids: const [],
       modelVersion: 5,
@@ -325,59 +313,8 @@ obx_int.ModelDefinition getObjectBoxModel() {
 
           return object;
         }),
-    BoxPasswordSecret: obx_int.EntityDefinition<BoxPasswordSecret>(
-        model: _entities[1],
-        toOneRelations: (BoxPasswordSecret object) => [],
-        toManyRelations: (BoxPasswordSecret object) => {},
-        getId: (BoxPasswordSecret object) => object.id,
-        setId: (BoxPasswordSecret object, int id) {
-          object.id = id;
-        },
-        objectToFB: (BoxPasswordSecret object, fb.Builder fbb) {
-          final entityIdOffset = fbb.writeString(object.entityId);
-          final nameOffset =
-              object.name == null ? null : fbb.writeString(object.name!);
-          final passwordOffset = fbb.writeString(object.password);
-          final secretsEntryIdOffset = fbb.writeString(object.secretsEntryId);
-          final userIdOffset = fbb.writeString(object.userId);
-          fbb.startTable(7);
-          fbb.addInt64(0, object.id);
-          fbb.addOffset(1, entityIdOffset);
-          fbb.addOffset(2, nameOffset);
-          fbb.addOffset(3, passwordOffset);
-          fbb.addOffset(4, secretsEntryIdOffset);
-          fbb.addOffset(5, userIdOffset);
-          fbb.finish(fbb.endTable());
-          return object.id;
-        },
-        objectFromFB: (obx.Store store, ByteData fbData) {
-          final buffer = fb.BufferContext(fbData);
-          final rootOffset = buffer.derefObject(0);
-          final idParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-          final entityIdParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 6, '');
-          final secretsEntryIdParam =
-              const fb.StringReader(asciiOptimization: true)
-                  .vTableGet(buffer, rootOffset, 12, '');
-          final userIdParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 14, '');
-          final nameParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 8);
-          final passwordParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 10, '');
-          final object = BoxPasswordSecret(
-              id: idParam,
-              entityId: entityIdParam,
-              secretsEntryId: secretsEntryIdParam,
-              userId: userIdParam,
-              name: nameParam,
-              password: passwordParam);
-
-          return object;
-        }),
     BoxSecretsCategory: obx_int.EntityDefinition<BoxSecretsCategory>(
-        model: _entities[2],
+        model: _entities[1],
         toOneRelations: (BoxSecretsCategory object) => [],
         toManyRelations: (BoxSecretsCategory object) => {},
         getId: (BoxSecretsCategory object) => object.id,
@@ -416,7 +353,7 @@ obx_int.ModelDefinition getObjectBoxModel() {
           return object;
         }),
     BoxSecretsEntry: obx_int.EntityDefinition<BoxSecretsEntry>(
-        model: _entities[3],
+        model: _entities[2],
         toOneRelations: (BoxSecretsEntry object) => [],
         toManyRelations: (BoxSecretsEntry object) => {},
         getId: (BoxSecretsEntry object) => object.id,
@@ -427,15 +364,17 @@ obx_int.ModelDefinition getObjectBoxModel() {
           final secretsEntryIdOffset = fbb.writeString(object.secretsEntryId);
           final userIdOffset = fbb.writeString(object.userId);
           final titleOffset = fbb.writeString(object.title);
-          final categoryIdOffset = object.categoryId == null
-              ? null
-              : fbb.writeString(object.categoryId!);
-          fbb.startTable(7);
+          final categoryIdsOffset = fbb.writeList(
+              object.categoryIds.map(fbb.writeString).toList(growable: false));
+          final secretIdsOffset = fbb.writeList(
+              object.secretIds.map(fbb.writeString).toList(growable: false));
+          fbb.startTable(9);
           fbb.addInt64(0, object.id);
           fbb.addOffset(1, secretsEntryIdOffset);
           fbb.addOffset(2, userIdOffset);
           fbb.addOffset(3, titleOffset);
-          fbb.addOffset(5, categoryIdOffset);
+          fbb.addOffset(6, categoryIdsOffset);
+          fbb.addOffset(7, secretIdsOffset);
           fbb.finish(fbb.endTable());
           return object.id;
         },
@@ -449,40 +388,52 @@ obx_int.ModelDefinition getObjectBoxModel() {
                   .vTableGet(buffer, rootOffset, 6, '');
           final userIdParam = const fb.StringReader(asciiOptimization: true)
               .vTableGet(buffer, rootOffset, 8, '');
-          final categoryIdParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 14);
           final titleParam = const fb.StringReader(asciiOptimization: true)
               .vTableGet(buffer, rootOffset, 10, '');
+          final categoryIdsParam = const fb.ListReader<String>(
+                  fb.StringReader(asciiOptimization: true),
+                  lazy: false)
+              .vTableGet(buffer, rootOffset, 16, []);
+          final secretIdsParam = const fb.ListReader<String>(
+                  fb.StringReader(asciiOptimization: true),
+                  lazy: false)
+              .vTableGet(buffer, rootOffset, 18, []);
           final object = BoxSecretsEntry(
               id: idParam,
               secretsEntryId: secretsEntryIdParam,
               userId: userIdParam,
-              categoryId: categoryIdParam,
-              title: titleParam);
+              title: titleParam,
+              categoryIds: categoryIdsParam,
+              secretIds: secretIdsParam);
 
           return object;
         }),
-    BoxSimpleTextSecret: obx_int.EntityDefinition<BoxSimpleTextSecret>(
-        model: _entities[4],
-        toOneRelations: (BoxSimpleTextSecret object) => [],
-        toManyRelations: (BoxSimpleTextSecret object) => {},
-        getId: (BoxSimpleTextSecret object) => object.id,
-        setId: (BoxSimpleTextSecret object, int id) {
+    BoxSecret: obx_int.EntityDefinition<BoxSecret>(
+        model: _entities[3],
+        toOneRelations: (BoxSecret object) => [],
+        toManyRelations: (BoxSecret object) => {},
+        getId: (BoxSecret object) => object.id,
+        setId: (BoxSecret object, int id) {
           object.id = id;
         },
-        objectToFB: (BoxSimpleTextSecret object, fb.Builder fbb) {
-          final entityIdOffset = fbb.writeString(object.entityId);
-          final nameOffset = fbb.writeString(object.name);
-          final textOffset = fbb.writeString(object.text);
+        objectToFB: (BoxSecret object, fb.Builder fbb) {
+          final secretIdOffset = fbb.writeString(object.secretId);
           final userIdOffset = fbb.writeString(object.userId);
-          final secretsEntryIdOffset = fbb.writeString(object.secretsEntryId);
+          final nameOffset =
+              object.name == null ? null : fbb.writeString(object.name!);
+          final dbSecretTypeOffset = object.dbSecretType == null
+              ? null
+              : fbb.writeString(object.dbSecretType!);
+          final dbSecretDataOffset = object.dbSecretData == null
+              ? null
+              : fbb.writeString(object.dbSecretData!);
           fbb.startTable(7);
           fbb.addInt64(0, object.id);
-          fbb.addOffset(1, entityIdOffset);
-          fbb.addOffset(2, nameOffset);
-          fbb.addOffset(3, textOffset);
-          fbb.addOffset(4, userIdOffset);
-          fbb.addOffset(5, secretsEntryIdOffset);
+          fbb.addOffset(1, secretIdOffset);
+          fbb.addOffset(2, userIdOffset);
+          fbb.addOffset(3, nameOffset);
+          fbb.addOffset(4, dbSecretTypeOffset);
+          fbb.addOffset(5, dbSecretDataOffset);
           fbb.finish(fbb.endTable());
           return object.id;
         },
@@ -491,24 +442,21 @@ obx_int.ModelDefinition getObjectBoxModel() {
           final rootOffset = buffer.derefObject(0);
           final idParam =
               const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-          final entityIdParam = const fb.StringReader(asciiOptimization: true)
+          final secretIdParam = const fb.StringReader(asciiOptimization: true)
               .vTableGet(buffer, rootOffset, 6, '');
           final userIdParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 12, '');
-          final secretsEntryIdParam =
-              const fb.StringReader(asciiOptimization: true)
-                  .vTableGet(buffer, rootOffset, 14, '');
-          final nameParam = const fb.StringReader(asciiOptimization: true)
               .vTableGet(buffer, rootOffset, 8, '');
-          final textParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 10, '');
-          final object = BoxSimpleTextSecret(
+          final nameParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGetNullable(buffer, rootOffset, 10);
+          final object = BoxSecret(
               id: idParam,
-              entityId: entityIdParam,
+              secretId: secretIdParam,
               userId: userIdParam,
-              secretsEntryId: secretsEntryIdParam,
-              name: nameParam,
-              text: textParam);
+              name: nameParam)
+            ..dbSecretType = const fb.StringReader(asciiOptimization: true)
+                .vTableGetNullable(buffer, rootOffset, 12)
+            ..dbSecretData = const fb.StringReader(asciiOptimization: true)
+                .vTableGetNullable(buffer, rootOffset, 14);
 
           return object;
         })
@@ -540,98 +488,75 @@ class BoxUser_ {
       obx.QueryStringProperty<BoxUser>(_entities[0].properties[4]);
 }
 
-/// [BoxPasswordSecret] entity fields to define ObjectBox queries.
-class BoxPasswordSecret_ {
-  /// see [BoxPasswordSecret.id]
-  static final id =
-      obx.QueryIntegerProperty<BoxPasswordSecret>(_entities[1].properties[0]);
-
-  /// see [BoxPasswordSecret.entityId]
-  static final entityId =
-      obx.QueryStringProperty<BoxPasswordSecret>(_entities[1].properties[1]);
-
-  /// see [BoxPasswordSecret.name]
-  static final name =
-      obx.QueryStringProperty<BoxPasswordSecret>(_entities[1].properties[2]);
-
-  /// see [BoxPasswordSecret.password]
-  static final password =
-      obx.QueryStringProperty<BoxPasswordSecret>(_entities[1].properties[3]);
-
-  /// see [BoxPasswordSecret.secretsEntryId]
-  static final secretsEntryId =
-      obx.QueryStringProperty<BoxPasswordSecret>(_entities[1].properties[4]);
-
-  /// see [BoxPasswordSecret.userId]
-  static final userId =
-      obx.QueryStringProperty<BoxPasswordSecret>(_entities[1].properties[5]);
-}
-
 /// [BoxSecretsCategory] entity fields to define ObjectBox queries.
 class BoxSecretsCategory_ {
   /// see [BoxSecretsCategory.id]
   static final id =
-      obx.QueryIntegerProperty<BoxSecretsCategory>(_entities[2].properties[0]);
+      obx.QueryIntegerProperty<BoxSecretsCategory>(_entities[1].properties[0]);
 
   /// see [BoxSecretsCategory.categoryId]
   static final categoryId =
-      obx.QueryStringProperty<BoxSecretsCategory>(_entities[2].properties[1]);
+      obx.QueryStringProperty<BoxSecretsCategory>(_entities[1].properties[1]);
 
   /// see [BoxSecretsCategory.name]
   static final name =
-      obx.QueryStringProperty<BoxSecretsCategory>(_entities[2].properties[2]);
+      obx.QueryStringProperty<BoxSecretsCategory>(_entities[1].properties[2]);
 
   /// see [BoxSecretsCategory.userId]
   static final userId =
-      obx.QueryStringProperty<BoxSecretsCategory>(_entities[2].properties[3]);
+      obx.QueryStringProperty<BoxSecretsCategory>(_entities[1].properties[3]);
 }
 
 /// [BoxSecretsEntry] entity fields to define ObjectBox queries.
 class BoxSecretsEntry_ {
   /// see [BoxSecretsEntry.id]
   static final id =
-      obx.QueryIntegerProperty<BoxSecretsEntry>(_entities[3].properties[0]);
+      obx.QueryIntegerProperty<BoxSecretsEntry>(_entities[2].properties[0]);
 
   /// see [BoxSecretsEntry.secretsEntryId]
   static final secretsEntryId =
-      obx.QueryStringProperty<BoxSecretsEntry>(_entities[3].properties[1]);
+      obx.QueryStringProperty<BoxSecretsEntry>(_entities[2].properties[1]);
 
   /// see [BoxSecretsEntry.userId]
   static final userId =
-      obx.QueryStringProperty<BoxSecretsEntry>(_entities[3].properties[2]);
+      obx.QueryStringProperty<BoxSecretsEntry>(_entities[2].properties[2]);
 
   /// see [BoxSecretsEntry.title]
   static final title =
-      obx.QueryStringProperty<BoxSecretsEntry>(_entities[3].properties[3]);
+      obx.QueryStringProperty<BoxSecretsEntry>(_entities[2].properties[3]);
 
-  /// see [BoxSecretsEntry.categoryId]
-  static final categoryId =
-      obx.QueryStringProperty<BoxSecretsEntry>(_entities[3].properties[4]);
+  /// see [BoxSecretsEntry.categoryIds]
+  static final categoryIds = obx.QueryStringVectorProperty<BoxSecretsEntry>(
+      _entities[2].properties[4]);
+
+  /// see [BoxSecretsEntry.secretIds]
+  static final secretIds = obx.QueryStringVectorProperty<BoxSecretsEntry>(
+      _entities[2].properties[5]);
 }
 
-/// [BoxSimpleTextSecret] entity fields to define ObjectBox queries.
-class BoxSimpleTextSecret_ {
-  /// see [BoxSimpleTextSecret.id]
+/// [BoxSecret] entity fields to define ObjectBox queries.
+class BoxSecret_ {
+  /// see [BoxSecret.id]
   static final id =
-      obx.QueryIntegerProperty<BoxSimpleTextSecret>(_entities[4].properties[0]);
+      obx.QueryIntegerProperty<BoxSecret>(_entities[3].properties[0]);
 
-  /// see [BoxSimpleTextSecret.entityId]
-  static final entityId =
-      obx.QueryStringProperty<BoxSimpleTextSecret>(_entities[4].properties[1]);
+  /// see [BoxSecret.secretId]
+  static final secretId =
+      obx.QueryStringProperty<BoxSecret>(_entities[3].properties[1]);
 
-  /// see [BoxSimpleTextSecret.name]
-  static final name =
-      obx.QueryStringProperty<BoxSimpleTextSecret>(_entities[4].properties[2]);
-
-  /// see [BoxSimpleTextSecret.text]
-  static final text =
-      obx.QueryStringProperty<BoxSimpleTextSecret>(_entities[4].properties[3]);
-
-  /// see [BoxSimpleTextSecret.userId]
+  /// see [BoxSecret.userId]
   static final userId =
-      obx.QueryStringProperty<BoxSimpleTextSecret>(_entities[4].properties[4]);
+      obx.QueryStringProperty<BoxSecret>(_entities[3].properties[2]);
 
-  /// see [BoxSimpleTextSecret.secretsEntryId]
-  static final secretsEntryId =
-      obx.QueryStringProperty<BoxSimpleTextSecret>(_entities[4].properties[5]);
+  /// see [BoxSecret.name]
+  static final name =
+      obx.QueryStringProperty<BoxSecret>(_entities[3].properties[3]);
+
+  /// see [BoxSecret.dbSecretType]
+  static final dbSecretType =
+      obx.QueryStringProperty<BoxSecret>(_entities[3].properties[4]);
+
+  /// see [BoxSecret.dbSecretData]
+  static final dbSecretData =
+      obx.QueryStringProperty<BoxSecret>(_entities[3].properties[5]);
 }

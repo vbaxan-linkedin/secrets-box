@@ -17,15 +17,41 @@ final class SecretsBoxRepositoryImpl implements SecretsRepository {
   ResultFuture<int> createSecretsEntry({
     required String secretsEntryId,
     required String userId,
-    required String? categoryId,
     required String title,
+    required List<SecretsCategory> categories,
+    required List<Secret<dynamic>> secrets,
   }) async {
     try {
+      final List<String> secretIds = <String>[];
+      for (final Secret<dynamic> secret in secrets) {
+        Result<int>? idResult;
+        if (secret is TextSecret) {
+          idResult = await createSimpleTextSecret(
+            secretId: secret.secretId,
+            userId: userId,
+            name: secret.name,
+            text: secret.value,
+          );
+        } else if (secret is PasswordSecret) {
+          idResult = await createPasswordTextSecret(
+            secretId: secret.secretId,
+            userId: userId,
+            name: secret.name,
+            password: secret.value,
+          );
+        }
+        if (idResult?.extractSuccess().data != null) {
+          secretIds.add(secret.secretId);
+        }
+      }
       final int result = await _dataSource.createSecretsEntry(
         secretsEntryId: secretsEntryId,
         userId: userId,
-        categoryId: categoryId,
         title: title,
+        categoryIds: categories.map((SecretsCategory category) {
+          return category.categoryId;
+        }).toFixedNonNullableList(),
+        secretIds: secretIds,
       );
       return SuccessResult<int>(data: result);
     } on DatabaseException catch (e) {
@@ -54,15 +80,13 @@ final class SecretsBoxRepositoryImpl implements SecretsRepository {
   @override
   ResultFuture<int> createPasswordTextSecret({
     required String secretId,
-    required String secretsEntryId,
     required String userId,
     required String name,
-    required String password,
+    required Password? password,
   }) async {
     try {
       final int result = await _dataSource.createPasswordTextSecret(
         secretId: secretId,
-        secretsEntryId: secretsEntryId,
         userId: userId,
         name: name,
         password: password,
@@ -76,15 +100,13 @@ final class SecretsBoxRepositoryImpl implements SecretsRepository {
   @override
   ResultFuture<int> createSimpleTextSecret({
     required String secretId,
-    required String secretsEntryId,
     required String userId,
     required String name,
-    required String text,
+    required String? text,
   }) async {
     try {
       final int result = await _dataSource.createSimpleTextSecret(
         secretId: secretId,
-        secretsEntryId: secretsEntryId,
         userId: userId,
         name: name,
         text: text,

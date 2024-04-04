@@ -1,58 +1,56 @@
 part of secrets_entities;
 
-sealed class Secret extends Equatable {
+sealed class Secret<T> extends Equatable {
   const Secret({
     required this.secretId,
-    required this.secretsEntryId,
     required this.userId,
     required this.name,
+    required this.value,
   });
 
   final String secretId;
-  final String secretsEntryId;
   final String userId;
   final String name;
+  final T? value;
 
   @override
-  List<Object?> get props => <Object?>[secretId, secretsEntryId, userId, name];
+  List<Object?> get props => <Object?>[secretId, userId, name];
 }
 
-final class SimpleTextSecret extends Secret {
-  const SimpleTextSecret({
+final class TextSecret extends Secret<String> {
+  const TextSecret({
     required String secretId,
-    required String secretsEntryId,
     required String userId,
     required String name,
     required this.text,
   }) : super(
           secretId: secretId,
-          secretsEntryId: secretsEntryId,
           userId: userId,
           name: name,
+          value: text,
         );
 
-  final String text;
+  final String? text;
 
   @override
   List<Object?> get props => <Object?>[...super.props, text];
 }
 
-final class PasswordSecret extends Secret {
+final class PasswordSecret extends Secret<Password> {
   PasswordSecret(
     BuildContext context, {
     required String secretId,
-    required String secretsEntryId,
     required String userId,
     String? name,
     required this.password,
   }) : super(
           secretId: secretId,
-          secretsEntryId: secretsEntryId,
           userId: userId,
           name: name ?? S.of(context).password,
+          value: password,
         );
 
-  final String password;
+  final Password? password;
 
   @override
   List<Object?> get props => <Object?>[...super.props, password];

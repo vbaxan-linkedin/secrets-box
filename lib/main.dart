@@ -17,12 +17,8 @@ class SecretsBoxApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: <SingleChildWidget>[
-        BlocProvider<AuthBloc>(
-          create: (BuildContext context) => sl<AuthBloc>(),
-        ),
-      ],
+    return BlocProvider<AuthBloc>(
+      create: (BuildContext context) => sl<AuthBloc>(),
       child: MaterialApp.router(
         theme: ThemeData(
           useMaterial3: true,

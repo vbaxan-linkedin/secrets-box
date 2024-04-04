@@ -10,5 +10,6 @@
   "addSecret": "Add Secret",
   "title": "Title",
   "secrets": "Secrets",
-  "settings": "Settings"
+  "settings": "Settings",
+  "noSecretsEntries": "There are no secrets entries at the moment."
 }

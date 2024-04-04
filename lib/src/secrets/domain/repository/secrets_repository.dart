@@ -7,8 +7,9 @@ abstract interface class SecretsRepository {
   ResultFuture<int> createSecretsEntry({
     required String secretsEntryId,
     required String userId,
-    required String? categoryId,
     required String title,
+    required List<SecretsCategory> categories,
+    required List<Secret<dynamic>> secrets,
   });
 
   ResultFuture<int> createSecretsCategory({
@@ -19,18 +20,16 @@ abstract interface class SecretsRepository {
 
   ResultFuture<int> createSimpleTextSecret({
     required String secretId,
-    required String secretsEntryId,
     required String userId,
     required String name,
-    required String text,
+    required String? text,
   });
 
   ResultFuture<int> createPasswordTextSecret({
     required String secretId,
-    required String secretsEntryId,
     required String userId,
     required String name,
-    required String password,
+    required Password? password,
   });
 
   ResultFuture<List<SecretsEntry>> fetchSecretsEntries(String userId);

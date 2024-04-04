@@ -9,6 +9,7 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:secrets_box/objectbox.g.dart';
 import 'package:secrets_box/src/auth/data/models/box_user.dart';
+import 'package:secrets_box/src/secrets/data/models/index.dart';
 import 'package:uuid/uuid.dart';
 
 export 'di/index.dart';

@@ -14,9 +14,9 @@ final class _CreateOrUpdateSecretScreenState extends State<CreateOrUpdateSecretS
       appBar: CustomAppBar.withFooter(
         context,
         leading: const AppBackButton(),
-        bottom: CreateOrUpdateSecretAppBarBottom(),
+        bottom: const CreateOrUpdateSecretAppBarBottom(),
       ),
-      child: const SizedBox(),
+      child: const SizedBox.shrink(),
     );
   }
 }

@@ -9,3 +9,7 @@ Future<void> init() async {
     ..initCoreObjects()
     ..initAuth();
 }
+
+void initSecrets() {
+  sl.initSecrets();
+}

@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "createProfile": MessageLookupByLibrary.simpleMessage("Create profile"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "noSecretsEntries": MessageLookupByLibrary.simpleMessage(
+            "There are no secrets entries at the moment."),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "repeatPassword":
             MessageLookupByLibrary.simpleMessage("Repeat password"),

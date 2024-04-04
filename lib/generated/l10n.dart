@@ -169,6 +169,16 @@ class S {
       args: [],
     );
   }
+
+  /// `There are no secrets entries at the moment.`
+  String get noSecretsEntries {
+    return Intl.message(
+      'There are no secrets entries at the moment.',
+      name: 'noSecretsEntries',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -8,7 +8,7 @@ final class SecretsBoxDataSourceImpl implements SecretsBoxDataSource {
     required this.conditions,
   });
 
-  final Box<BoxSecret> secretsBox;
+  final Box<BoxSecret<dynamic>> secretsBox;
   final Box<BoxSecretsCategory> secretsCategoriesBox;
   final Box<BoxSecretsEntry> secretsEntriesBox;
   final SecretsEntriesBoxQueryConditions conditions;
@@ -16,17 +16,19 @@ final class SecretsBoxDataSourceImpl implements SecretsBoxDataSource {
   @override
   Future<int> createSecretsEntry({
     required String secretsEntryId,
-    String? categoryId,
+    required List<String> categoryIds,
     required String userId,
     required String title,
+    required List<String> secretIds,
   }) async {
     try {
       return secretsEntriesBox.put(
         BoxSecretsEntry(
           secretsEntryId: secretsEntryId,
+            categoryIds: categoryIds,
           userId: userId,
-          categoryId: categoryId,
           title: title,
+          secretIds: secretIds
         ),
         mode: PutMode.insert,
       );
@@ -43,11 +45,7 @@ final class SecretsBoxDataSourceImpl implements SecretsBoxDataSource {
   }) async {
     try {
       return secretsCategoriesBox.put(
-        BoxSecretsCategory(
-          categoryId: categoryId,
-          userId: userId,
-          name: name
-        ),
+        BoxSecretsCategory(categoryId: categoryId, userId: userId, name: name),
         mode: PutMode.insert,
       );
     } catch (e) {
@@ -58,16 +56,14 @@ final class SecretsBoxDataSourceImpl implements SecretsBoxDataSource {
   @override
   Future<int> createPasswordTextSecret({
     required String secretId,
-    required String secretsEntryId,
     required String userId,
     required String name,
-    required String password,
+    required Password? password,
   }) async {
     try {
       return secretsBox.put(
-        BoxPasswordSecret(
-          entityId: secretId,
-          secretsEntryId: secretsEntryId,
+        BoxSecret<Password>.password(
+          secretId: secretId,
           userId: userId,
           name: name,
           password: password,
@@ -82,16 +78,14 @@ final class SecretsBoxDataSourceImpl implements SecretsBoxDataSource {
   @override
   Future<int> createSimpleTextSecret({
     required String secretId,
-    required String secretsEntryId,
     required String userId,
     required String name,
-    required String text,
+    required String? text,
   }) async {
     try {
       return secretsBox.put(
-        BoxSimpleTextSecret(
-          entityId: secretId,
-          secretsEntryId: secretsEntryId,
+        BoxSecret<String>.text(
+          secretId: secretId,
           userId: userId,
           name: name,
           text: text,

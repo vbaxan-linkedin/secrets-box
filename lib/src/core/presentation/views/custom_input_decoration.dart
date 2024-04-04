@@ -1,9 +1,9 @@
 part of core_views;
 
 InputDecoration customInputDecoration({
-  required String labelText,
+  String? labelText,
   TextStyle? labelStyle,
-  required String hintText,
+  String? hintText,
   TextStyle? hintStyle,
   String? errorText,
   InputBorder? border = const OutlineInputBorder(),

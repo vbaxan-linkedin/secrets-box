@@ -1,6 +1,8 @@
 library secrets_data_models;
 
+import 'package:collection/collection.dart';
 import 'package:objectbox/objectbox.dart';
+import 'package:secrets_box/src/core/extensions/index.dart';
 import 'package:secrets_box/src/secrets/domain/entities/index.dart';
 
 part 'box_password_secret.dart';

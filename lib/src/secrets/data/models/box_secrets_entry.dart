@@ -6,8 +6,9 @@ class BoxSecretsEntry {
     this.id = 0,
     required this.secretsEntryId,
     required this.userId,
-    this.categoryId,
     required this.title,
+    required this.categoryIds,
+    required this.secretIds,
   });
 
   int id;
@@ -17,16 +18,19 @@ class BoxSecretsEntry {
 
   final String userId;
 
-  final String? categoryId;
-
   final String title;
+
+  final List<String> categoryIds;
+
+  final List<String> secretIds;
 
   SecretsEntry toDomainModel() {
     return SecretsEntry(
       secretsEntryId: secretsEntryId,
       userId: userId,
-      categoryId: categoryId,
       title: title,
+      categoryIds: categoryIds,
+      secretIds: secretIds,
     );
   }
 }
