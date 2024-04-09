@@ -10,6 +10,6 @@ Future<void> init() async {
     ..initAuth();
 }
 
-void initSecrets() {
-  sl.initSecrets();
+void initMainObjects(BuildContext context) {
+  sl.initSecrets(context);
 }

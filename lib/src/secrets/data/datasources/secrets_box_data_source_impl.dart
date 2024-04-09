@@ -25,10 +25,10 @@ final class SecretsBoxDataSourceImpl implements SecretsBoxDataSource {
       return secretsEntriesBox.put(
         BoxSecretsEntry(
           secretsEntryId: secretsEntryId,
-            categoryIds: categoryIds,
+          categoryIds: categoryIds,
           userId: userId,
           title: title,
-          secretIds: secretIds
+          secretIds: secretIds,
         ),
         mode: PutMode.insert,
       );
@@ -45,7 +45,11 @@ final class SecretsBoxDataSourceImpl implements SecretsBoxDataSource {
   }) async {
     try {
       return secretsCategoriesBox.put(
-        BoxSecretsCategory(categoryId: categoryId, userId: userId, name: name),
+        BoxSecretsCategory(
+          categoryId: categoryId,
+          userId: userId,
+          name: name,
+        ),
         mode: PutMode.insert,
       );
     } catch (e) {

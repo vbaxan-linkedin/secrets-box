@@ -1,7 +1,12 @@
 part of create_or_update_secrets_views;
 
 class CreateOrUpdateSecretAppBarBottom extends StatelessWidget implements PreferredSizeWidget {
-  const CreateOrUpdateSecretAppBarBottom({super.key});
+  const CreateOrUpdateSecretAppBarBottom({
+    super.key,
+    this.titleController,
+  });
+
+  final TextEditingController? titleController;
 
   @override
   Size get preferredSize => const Size.fromHeight(54.0);
@@ -11,6 +16,7 @@ class CreateOrUpdateSecretAppBarBottom extends StatelessWidget implements Prefer
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextField(
+        controller: titleController,
         style: const TextStyle(
           color: AppColors.kIndigo50,
         ),
@@ -23,12 +29,15 @@ class CreateOrUpdateSecretAppBarBottom extends StatelessWidget implements Prefer
           hintStyle: const TextStyle(
             color: AppColors.kIndigo50,
           ),
-          border: const UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: AppColors.kIndigo50
-            )
-          ),
+          border: const UnderlineInputBorder(borderSide: BorderSide(color: AppColors.kIndigo50)),
         ),
+        onChanged: (String value) {
+          context.read<SecretsBloc>().add(
+                StoreCreateSecretsEntryInfoEvent(
+                  title: NewStateValue<String>(value),
+                ),
+              );
+        },
       ),
     );
   }

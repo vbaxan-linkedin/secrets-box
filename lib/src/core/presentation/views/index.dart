@@ -18,7 +18,6 @@ import 'package:secrets_box/src/secrets/presentation/bloc/secrets_bloc.dart';
 part 'app_material_button.dart';
 part 'app_screen.dart';
 part 'app_text_form_field.dart';
-part 'circular_button.dart';
 part 'custom_app_bar.dart';
 part 'custom_input_decoration.dart';
 part 'main_screen.dart';

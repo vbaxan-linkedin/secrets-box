@@ -16,7 +16,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void initState() {
     super.initState();
-    initSecrets();
+    initMainObjects(context);
   }
 
   @override

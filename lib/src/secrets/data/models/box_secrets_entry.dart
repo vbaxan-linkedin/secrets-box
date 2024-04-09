@@ -27,7 +27,6 @@ class BoxSecretsEntry {
   SecretsEntry toDomainModel() {
     return SecretsEntry(
       secretsEntryId: secretsEntryId,
-      userId: userId,
       title: title,
       categoryIds: categoryIds,
       secretIds: secretIds,

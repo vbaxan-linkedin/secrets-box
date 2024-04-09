@@ -11,10 +11,7 @@ final class _SecretsScreenState extends State<SecretsScreen> {
   @override
   void initState() {
     super.initState();
-    final String? userId = context.read<AuthBloc>().concreteState<UserLoggedIn>()?.userId;
-    if (userId != null) {
-      context.read<SecretsBloc>().add(FetchSecretsEntriesEvent(userId: userId));
-    }
+    context.read<SecretsBloc>().add(const FetchSecretsEntriesEvent());
   }
 
   @override
@@ -28,7 +25,7 @@ final class _SecretsScreenState extends State<SecretsScreen> {
         child: Stack(
           alignment: Alignment.bottomRight,
           children: <Widget>[
-            BlocConsumer<SecretsBloc, SecretsState>(
+            BlocBuilder<SecretsBloc, SecretsState>(
               builder: (BuildContext context, SecretsState state) {
                 if (state is FetchingSecretsEntries) {
                   return const Center(
@@ -49,7 +46,6 @@ final class _SecretsScreenState extends State<SecretsScreen> {
                   return const SizedBox.shrink();
                 }
               },
-              listener: (BuildContext context, SecretsState state) {},
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -57,6 +53,11 @@ final class _SecretsScreenState extends State<SecretsScreen> {
                 icon: const Icon(Icons.add),
                 label: Text(S.of(context).addSecret),
                 onPressed: () async {
+                  context.read<SecretsBloc>().add(
+                    StoreCreateSecretsEntryInfoEvent(
+                      info: CreateSecretsEntryInfo.empty(),
+                    ),
+                  );
                   Future<void>.delayed(const Duration(milliseconds: 150)).then((_) {
                     const CreateOrUpdateSecretRoute().go(context);
                   });

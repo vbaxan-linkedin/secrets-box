@@ -1,10 +1,8 @@
 part of secrets_events;
 
-abstract base class SecretsEvent extends Equatable {
-  const SecretsEvent({required this.userId});
-
-  final String userId;
+abstract class SecretsEvent extends Equatable {
+  const SecretsEvent();
 
   @override
-  List<Object?> get props => <Object?>[userId];
+  List<Object?> get props => const <Object?>[];
 }

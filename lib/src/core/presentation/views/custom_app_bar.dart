@@ -49,10 +49,10 @@ final class CustomAppBar extends StatelessWidget implements PreferredSizeWidget 
 
   final BuildContext context;
   final String? title;
+  final Widget? leading;
   final List<Widget> actions;
   final PreferredSizeWidget? bottom;
   final double? footerHeight;
-  final Widget? leading;
 
   @override
   Size get preferredSize {
@@ -78,8 +78,18 @@ final class CustomAppBar extends StatelessWidget implements PreferredSizeWidget 
                   color: AppColors.kIndigo50,
                 ),
               ),
-        bottom: bottom,
         leading: leading,
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Row(
+              children: actions.map((Widget action) {
+                return action;
+              }).toFixedNonNullableList(),
+            ),
+          )
+        ],
+        bottom: bottom,
       ),
     );
   }
@@ -87,13 +97,12 @@ final class CustomAppBar extends StatelessWidget implements PreferredSizeWidget 
 
 class AppBackButton extends StatelessWidget {
   const AppBackButton({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return CircularButton.icon(
-      icon: Icons.arrow_back_outlined,
-      iconColor: AppColors.kIndigo50,
-      onTap: goRouter.pop,
+    return IconButton(
+      icon: const Icon(Icons.arrow_back_outlined),
+      color: AppColors.kIndigo50,
+      onPressed: goRouter.pop,
     );
   }
 }
