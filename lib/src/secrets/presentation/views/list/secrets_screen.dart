@@ -1,4 +1,4 @@
-part of secrets_views;
+part of secrets_list_views;
 
 final class SecretsScreen extends StatefulWidget {
   const SecretsScreen({super.key});
@@ -40,7 +40,9 @@ final class _SecretsScreenState extends State<SecretsScreen> {
                       )
                     );
                   } else {
-                    return const SizedBox.shrink();
+                    return SecretsEntriesList(
+                      entries: state.entries,
+                    );
                   }
                 } else {
                   return const SizedBox.shrink();
